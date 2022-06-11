@@ -15,10 +15,10 @@ jobs:
           local_directory: "config.js"
           blob_directory: "config.js"
           http_headers: |
-            - glob: "**/*.????????.*"
+            - glob: "*.????????.*"
               headers:
                 Cache-Control: public, max-age=604800, immutable
 
-            - glob: "**/*"
+            - glob: "**.*"
               headers:
                 Cache-Control: public, max-age=120, s-maxage=180, proxy-revalidate
