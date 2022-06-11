@@ -1,4 +1,4 @@
-name: deploy-to-dev
+name: deploy-config
 on:
   workflow_dispatch:
 jobs:
