@@ -12,10 +12,10 @@ jobs:
           action: upload
           connection_string: ${{ secrets.CONNECTION_STRING }}
           container_name: "aditya-test"
-          local_directory: "config.js"
-          blob_directory: "config.js"
+          local_directory: "dev"
+          blob_directory: "."
           http_headers: |
-            - glob: "*.????????.*"
+            - glob: "**/*.????????.*"
               headers:
                 Cache-Control: public, max-age=604800, immutable
 
