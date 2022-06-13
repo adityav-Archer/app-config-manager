@@ -13,7 +13,7 @@ jobs:
           action: upload
           connection_string: ${{ secrets.CONNECTION_STRING }}
           container_name: "aditya-test"
-          local_directory: "dev"
+          local_directory: "dev/config.js"
           blob_directory: "."
           http_headers: |
             - glob: "**/*.????????.*"
