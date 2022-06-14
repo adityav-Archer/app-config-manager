@@ -36,7 +36,7 @@ export let config = {
       secondaryApiUrl: "https://api.ci.apiparty.com/context-intel/dev",
       contentAssetsUrl:
         "https://api.ci.apiparty.com/context-intel/dev/content-assets",
-      showAppBar: false,
+      showAppBar: true,
     },
     {
       title: "Chat",
