@@ -37,6 +37,7 @@ export let config = {
       contentAssetsUrl:
         "https://api.ci.apiparty.com/context-intel/dev/content-assets",
       showAppBar: true,
+      showNavBar: true
     },
     {
       title: "Chat",
