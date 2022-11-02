@@ -17,7 +17,7 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
       - name: Build
         run: node index.js
-        with:
+        env:
           environment: ${{ env.environment }}
   deploy:
     runs-on: ubuntu-latest
