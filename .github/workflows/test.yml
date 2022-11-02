@@ -1,8 +1,25 @@
 name: deploy-config
 on:
   workflow_dispatch:
+env:
+  node-version: "16.x"
+  environment: "dev"
 jobs:
-  build-and-deploy:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js ${{ env.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.node-version }}
+          always-auth: true
+          registry-url: "https://npm.pkg.github.com"
+      - name: Build
+        run: node index.js
+        with:
+          environment: ${{ env.environment }}
+  deploy:
     runs-on: ubuntu-latest
 
     steps:

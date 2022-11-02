@@ -1,0 +1,24 @@
+{
+    "title": "Dialogues",
+    "name": "ci-ace-app",
+    "nav": [
+      {
+        "label": "Libraries",
+        "urlPattern": "^(?!.*view).*$",
+        "state": { "view": null }
+      }
+    ],
+    "src": "http://localhost:8000/src/index.js",
+    "logoSrc": "images/logo.svg",
+    "state": {
+      "app": "ace"
+    },
+    "urlPattern": "app=ace",
+    "prodId": "48798c43-e689-4dc7-b357-65cf40f97824",
+    "behaviors": [null, "Acknowledge", "Apologize"],
+   
+    "apiUrl": "https://api.ci.apiparty.com/context-intel/dev/v2",
+    "secondaryApiUrl": "https://api.ci.apiparty.com/context-intel/dev",
+    "contentAssetsUrl":
+      "https://api.ci.apiparty.com/context-intel/dev/content-assets"
+}
