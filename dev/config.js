@@ -42,7 +42,7 @@ export let config = {
     },
     {
       title: "Chat",
-      description: "Chat with Walbot",
+      description: "Chat with Walbot 1",
       name: "ci-chat-app",
       nav: [
         {
