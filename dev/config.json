@@ -10,5 +10,6 @@
   "cache": {
     "cacheLocation": "sessionStorage",
     "storeAuthStateInCookie": false 
-  }
+  },
+  "showShell": true
 }
