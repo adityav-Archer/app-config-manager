@@ -8,7 +8,7 @@ const { BlobServiceClient } = require("@azure/storage-blob");
 
 const webContainerClient = (
     BlobServiceClient
-    .fromConnectionString(process.env.CONNECTION_STRING ?? "DefaultEndpointsProtocol=https;AccountName=archcontextintelstorage;AccountKey=vCqcOwkNzsJgr0+SYUch6vOaBsVAOEkh1HJic+mf+7YErBRTuVtVO+3a8HsoPI8P36evrdVZzuJj2lJe8Eus2Q==;EndpointSuffix=core.windows.net")
+    .fromConnectionString(process.env.CONNECTION_STRING)
     .getContainerClient('aditya-test')
 );
 const url = webContainerClient.url;
@@ -33,7 +33,6 @@ async function getApplicationsList(env){
     let dirPath = `${env}/apps`;
     let filesList = await readDirAsync(dirPath);
     let appsList = [];
-    console.log(filesList);
     if(filesList.length === 0) return [];
     filesList.forEach(async item => {
         let app =  readFileSync(`${dirPath}/${item}`, "utf8");
