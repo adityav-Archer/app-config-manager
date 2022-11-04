@@ -1,0 +1,83 @@
+{
+    "title": "Image Manager",
+    "name": "image-manager",
+    "nav": [
+      {
+        "label": "Label",
+        "urlPattern": "^view=label",
+        "state": {
+          "view": "label",
+          "keyword": null,
+          "id": null,
+          "groupId": null,
+          "latif": true
+        }
+      },
+      {
+        "label": "Compare",
+        "urlPattern": "^view=compare",
+        "state": {
+          "view": "compare",
+          "keyword": null,
+          "id": null,
+          "groupId": null,
+          "latif": false
+        }
+      }
+    ],
+    "src": "/image-manager@1.6.0/index.js",
+    "logoSrc": "images/imLogo.svg",
+    "state": { "app": "image-manager" },
+    "urlPattern": "app=image-manager",
+    "baseUrl": "https://api.ci.apiparty.com",
+    "labelings": [
+      { "evt": "goldenImage", "label": "Golden","type": "labeling" },
+      { "evt": "WrongGtin", "label": "Wrong", "type": "labeling" },
+      { "evt": "badView", "label": "Bad", "type": "labeling" },
+      { "evt": "clear", "label": "Clear", "type": "labeling" }
+    ],
+    "imageMods": [
+      { "evt": "+90", "label": "Rotate 90", "type": "editing" },
+      { "evt": "-90", "label": "Rotate -90", "type": "editing" }
+    ],
+    "hDistinguishableOptions": [
+      { "id": 0, "value": null, "name": "All" },
+      { "id": 1, "value": true, "name": "Distinguishable" },
+      { "id": 2,"value": false, "name": "Indistinguishable" }
+    ],
+    "fabCompareOptions": [
+      { "evt": "true", "label": "Distinguishable", "type": "labeling" },
+      { "evt": "false", "label": "Indistinguishable", "type": "labeling" }
+    ],
+    "pairStatusOptions": [
+      { "id": 0, "value": true, "name": "Labelled" },
+      { "id": 1, "value": false, "name": "Unlabelled" },
+      { "id": 2, "value": null, "name": "All" }
+    ],
+    "gtinCompareDefaultStore": "3525",
+    "defaultModelVersion": "v3.4",
+    "stores": [
+      {
+        "id": "66f07eb0-3f7f-4114-8511-ab676aa6b04a",
+        "storeNum": "3525",
+        "storeName": "Puyallup"
+      },
+      {
+        "id": "e82ba88a-acd6-44ce-bd16-b052e301703f",
+        "storeNum": "3098",
+        "storeName": "Bellevue"
+      },
+      {
+        "id": "f99384ae-c65d-4845-b096-dbdf5c410b54",
+        "storeNum": "5520",
+        "storeName": "ArcherMart"
+      }
+    ],
+    "filterOptions": [
+      { "id": 0, "name": "All", "value": "all" },
+      { "id": 1, "name": "Golden", "value": "golden" },
+      { "id": 2, "name": "No Golden", "value": "null" },
+      { "id": 3, "name": "Bad View", "value": "badView" },
+      { "id": 4, "name": "Wrong Gtin", "value": "wrongGtin" }
+    ]
+  }
