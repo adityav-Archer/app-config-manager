@@ -52,9 +52,9 @@ const main = async (env) => {
     let applications = await getApplicationsList(env);
     shellFile.applications = applications;
     let fileContents = `export let config = ${JSON.stringify(shellFile, null , 2)}`;
-    writeFileSync("./config/config.js", fileContents);
+    writeFileSync("./config/config_testfile2.js", fileContents);
 
-    let status = await upload(`${process.cwd()}/config/config.js`, `config.js`)
+   // let status = await upload(`${process.cwd()}/config/config.js`, `config.js`)
         
     
 }

@@ -22,3 +22,18 @@ jobs:
         env:
           environment: ${{ env.environment }}
           CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
+      - name: Copy files
+        uses: ulaval/azure-blob-copy-action@v1
+        with:
+          action: upload
+          connection_string: ${{ secrets.CONNECTION_STRING }}
+          container_name: "aditya-test"
+          local_directory: "config"
+          blob_directory: "."
+          http_headers: |
+            - glob: "**/*.????????.*"
+              headers:
+                Cache-Control: public, max-age=604800, immutable
+            - glob: "**.*"
+              headers:
+                Cache-Control: public, max-age=120, s-maxage=180, proxy-revalidate
