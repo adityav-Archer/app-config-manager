@@ -14,7 +14,7 @@
       "app": "ace"
     },
     "urlPattern": "app=ace",
-    "prodId": "48798c43-e689-4dc7-b357-65cf40f97824",
+    "prodId": "48798c43-e689-4dc7-b357-65cf40f97824"
     "behaviors": [null, "Acknowledge", "Apologize"],
    
     "apiUrl": "https://api.ci.apiparty.com/context-intel/dev/v2",
