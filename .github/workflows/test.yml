@@ -22,6 +22,8 @@ jobs:
         env:
           environment: ${{ env.environment }}
           CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
+      - name: Lint
+        run: npm run lint
       - name: Copy files
         uses: ulaval/azure-blob-copy-action@v1
         with:
