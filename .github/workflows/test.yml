@@ -1,13 +1,11 @@
 name: deploy-config
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
-      username:
-        description: 'A username passed from the caller workflow'
-        default: 'john-doe'
+      tags:
+        description: 'Tag Name'
         required: true
         type: string
-  workflow_dispatch:
 env:
   node-version: "16.x"
   environment: "dev"
@@ -15,6 +13,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          echo "Log level: $TAGS" 
       - uses: actions/checkout@v2
       - name: Set up Node.js ${{ env.node-version }}
         uses: actions/setup-node@v1
@@ -22,6 +22,10 @@ jobs:
           node-version: ${{ env.node-version }}
           always-auth: true
           registry-url: "https://npm.pkg.github.com"
+      - uses: rickstaa/action-create-tag@v1
+        with:
+          tag: ${{ inputs.tags }}
+          message: "Latest release"
       - name: Install dependencies
         run: npm install 
       - name: Build
