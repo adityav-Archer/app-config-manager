@@ -23,10 +23,6 @@ jobs:
           node-version: ${{ env.node-version }}
           always-auth: true
           registry-url: "https://npm.pkg.github.com"
-      - uses: rickstaa/action-create-tag@v1
-        with:
-          tag: ${{ inputs.tags }}
-          message: "Latest release"
       - name: Install dependencies
         run: npm install 
       - name: Build
@@ -36,6 +32,10 @@ jobs:
           CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
       - name: Lint
         run: npm run lint
+      - uses: rickstaa/action-create-tag@v1
+        with:
+          tag: ${{ inputs.tags }}
+          message: "Latest release"
       - name: Copy files
         uses: ulaval/azure-blob-copy-action@v1
         with:
