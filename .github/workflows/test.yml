@@ -32,7 +32,7 @@ jobs:
           CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
       - name: Lint
         run: npm run lint
-      - name: rickstaa/action-create-tag@v1
+      - uses: rickstaa/action-create-tag@v1
         with:
           tag: ${{ inputs.tags }}
           message: "Latest release"
