@@ -32,8 +32,10 @@ jobs:
           CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
       - name: Lint
         run: npm run lint
-      - name: Create tag
-        run: git tag ${{ inputs.tags }}
+      - name: rickstaa/action-create-tag@v1
+        with:
+          tag: ${{ inputs.tags }}
+          message: "Latest release"
       - name: Copy files
         uses: ulaval/azure-blob-copy-action@v1
         with:
