@@ -2,8 +2,8 @@ name: deploy-config
 on:
   workflow_dispatch:
     inputs:
-      username:
-        description: 'A username passed from the caller workflow'
+      tags:
+        description: 'Tag name'
         required: true
         type: string
 env:
