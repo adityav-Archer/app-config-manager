@@ -8,7 +8,7 @@ on:
         type: string
 env:
   node-version: "16.x"
-  environment: "dev"
+  environment: "DEVELOPMENT"
 jobs:
   build:
     runs-on: ubuntu-latest
