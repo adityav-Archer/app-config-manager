@@ -5,7 +5,10 @@ const writeFileAsync = util.promisify(writeFile)
 const readDirAsync = util.promisify(readdir);
 const process = require('process');
 const { BlobServiceClient } = require("@azure/storage-blob");
-
+let environments = { 
+    "DEVELOPMENT": "dev",
+    "PRODUCTION": "prod"
+}
 const webContainerClient = (
     BlobServiceClient
     .fromConnectionString(process.env.CONNECTION_STRING)
@@ -30,6 +33,7 @@ function upload(localPath, blobPath) {
 
 
 async function getApplicationsList(env){
+    
     let dirPath = `${env}/apps`;
     let filesList = await readDirAsync(dirPath);
     let appsList = [];
@@ -52,7 +56,7 @@ const main = async (env) => {
     let applications = await getApplicationsList(env);
     shellFile.applications = applications;
     let fileContents = `export let config = ${JSON.stringify(shellFile, null , 2)}`;
-    writeFileSync("./config/config_testfile2.js", fileContents);
+    writeFileSync("./config/config.js", fileContents);
 
    // let status = await upload(`${process.cwd()}/config/config.js`, `config.js`)
         
@@ -61,4 +65,4 @@ const main = async (env) => {
 
 let environment = process.env.environment ? process.env.environment : "dev";
 console.log(environment);
-main(environment);
+main(environments[environment]);
