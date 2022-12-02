@@ -11,5 +11,6 @@
     "cacheLocation": "sessionStorage",
     "storeAuthStateInCookie": false 
   },
-  "showShell": false
+  "showShell": false,
+  "hide": true
 }
